@@ -4,13 +4,12 @@ import { StepperOrientation } from '@angular/material/stepper';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-
 @Component({
-  selector: 'app-manual-data',
-  templateUrl: './manual-data.component.html',
-  styleUrls: ['./manual-data.component.css']
+  selector: 'app-edit-manual-data',
+  templateUrl: './edit-manual-data.component.html',
+  styleUrls: ['./edit-manual-data.component.css']
 })
-export class ManualDataComponent {
+export class EditManualDataComponent {
   firstFormGroup = this._formBuilder.group({
     customerId: ['', Validators.required],
     hbp: ['', Validators.required],
@@ -42,7 +41,3 @@ export class ManualDataComponent {
     console.log(this.firstFormGroup)
   }
 }
-
-
-
-

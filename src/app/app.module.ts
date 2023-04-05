@@ -1,7 +1,8 @@
+import { TokenInterceptor } from './Components/Interceptors/token.interceptor';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -17,6 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import { EditManualDataComponent } from './Components/edit-manual-data/edit-manual-data.component';
+import { WellnessScoreComponent } from './Components/wellness-score/wellness-score.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,8 @@ import {MatSelectModule} from '@angular/material/select';
     UploadFileComponent,
     QuestionsComponent,
     ManualDataComponent,
+    EditManualDataComponent,
+    WellnessScoreComponent,
     
   ],
   imports: [
@@ -40,7 +45,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [HttpClient, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

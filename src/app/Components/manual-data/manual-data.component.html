@@ -10,7 +10,7 @@
               <div class="main">
               <div class="column1">
               <a [routerLink]="['/landing']" class="nav-item nav-link fw-bold">Home</a>
-              <a [routerLink]="['/manual-data']" class="nav-item nav-link fw-bold">Edit Existing Record</a>
+              <a [routerLink]="['/edit-manual-data']" class="nav-item nav-link fw-bold">Edit Existing Record</a>
             </div>
             <div class="column2">
               <a [routerLink]="['/manual-data']" class="nav-item nav-link fw-bold ">Manual Score Check</a>
@@ -143,7 +143,7 @@
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
      <h3>You are Now Done.</h3>
-     <h3>Check How well you Did</h3>
+     <a [routerLink]="['/wellness-score']">Check How well you Did</a>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
