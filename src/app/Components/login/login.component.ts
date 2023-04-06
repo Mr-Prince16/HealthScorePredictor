@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../Services/login.service';
@@ -9,8 +10,7 @@ import { LoginService } from '../Services/login.service';
 })
 export class LoginComponent {
 loginForm: FormGroup;
-request:any={}
-constructor(private fb:FormBuilder, private api:LoginService){}
+constructor(private fb:FormBuilder, private route: Router){}
 ngOnInit(): void{
   this.loginForm = this.fb.group({
     email:['' , Validators.required],
@@ -18,12 +18,6 @@ ngOnInit(): void{
   })
 }
 login(){
-  this.request.userName=this.loginForm.value.email;
-  this.request.password=this.loginForm.value.password;
-this.api.login(this.request).subscribe(res=>{
-  console.log(res);
-  localStorage.setItem('token',res.token);
-
-})
+  this.route.navigate(['/upload-file'])
 }
 }

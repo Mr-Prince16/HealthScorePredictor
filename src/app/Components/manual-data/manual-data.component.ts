@@ -12,9 +12,10 @@ import { ManualFormService } from '../Services/manual-form.service';
   styleUrls: ['./manual-data.component.css']
 })
 export class ManualDataComponent {
-
+  
+  cID:any=localStorage.getItem('customerId');
   firstFormGroup = this._formBuilder.group({
-    customerId: ['', Validators.required],
+    customerId: [this.cID, Validators.required],
     hbp: ['', Validators.required],
     lbp: ['', Validators.required],
     hemoglobin: ['', Validators.required],
@@ -27,11 +28,6 @@ export class ManualDataComponent {
     bmi: ['', Validators.required],
     esr: ['', Validators.required],
     pulse: ['', Validators.required],
-    diabetic: ['', Validators.required],
-    obes:['', Validators.required],
-    kidney:['', Validators.required],
-    anaemia:['', Validators.required],
-    cardiac:['' , Validators.required]
   });
   isLinear = false;
   stepperOrientation: Observable<StepperOrientation>;

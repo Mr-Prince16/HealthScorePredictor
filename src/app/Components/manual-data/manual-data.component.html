@@ -104,42 +104,7 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="firstFormGroup" label="Disease Specific">
-    
-    <form [formGroup]="firstFormGroup">
-      <div class="outer-div1">
-      <mat-label>Diabetic</mat-label><br>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <input matInput formControlName="diabetic" placeholder="Diabetic"
-               required>
-      </mat-form-field><br>
-      <mat-label>Obes</mat-label><br>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <input matInput formControlName="obes" placeholder="Obes"
-               required>
-      </mat-form-field><br>
-      <mat-label>Kidney</mat-label><br>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <input matInput formControlName="kidney" placeholder="Kidney"
-               required>
-      </mat-form-field><br>
-      <mat-label>Anaemia</mat-label><br>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <input matInput formControlName="anaemia" placeholder="Anaemia"
-               required>
-      </mat-form-field><br>
-      <mat-label>Cardiac</mat-label><br>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <input matInput formControlName="cardiac" placeholder="Cardiac"
-               required>
-      </mat-form-field><br>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="getData()" matStepperNext>Next</button>
-      </div>
-    </div>
-    </form>
-  </mat-step>
+ 
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
      <h3>You are Now Done.</h3>
