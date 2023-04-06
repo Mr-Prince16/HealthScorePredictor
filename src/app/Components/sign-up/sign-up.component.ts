@@ -1,5 +1,6 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { SignupService } from '../Services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,21 +14,29 @@ export class SignupComponent implements OnInit {
   eyeIcon : string = "fa-eye-slash";
   signupForm!: FormGroup;
   genders = ['Male', 'Female'];
+  parameter!:any;
+    constructor(private fb: FormBuilder,private api:SignupService) { 
+      this.signupForm=this.fb.group({
+        firstName: ['' , Validators.required],
+        lastName: ['' , Validators.required],
+        email: ['' , Validators.required],
+        password: ['' , Validators.required],
+        age:[0 , Validators.required],
+        gender:['' , Validators.required]
+      })
+     }
  
-    constructor(private fb: FormBuilder) { }
-
   ngOnInit(): void {
-    this.signupForm=this.fb.group({
-      firstName: ['' , Validators.required],
-      lastName: ['' , Validators.required],
-      email: ['' , Validators.required],
-      password: ['' , Validators.required],
-      age:['' , Validators.required],
-      gender:['' , Validators.required]
-    })
+    
+
   }
   onSubmit(){
-    console.log(this.signupForm);
+    console.log(this.signupForm.value);
+   this.api.signUp(this.signupForm.value).subscribe(res=>{
+    console.log(res);
+    
+   })
+    
   }
  
 }

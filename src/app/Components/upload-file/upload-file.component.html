@@ -18,7 +18,7 @@ of Simple CSS Waves-->
             <div class="column2">
               <a [routerLink]="['/manual-data']" class="nav-item nav-link fw-bold ">Manual Score Check</a>
               <a [routerLink]="['/upload-file']" class="nav-item nav-link fw-bold">Check Score By PDF</a>
-              <a [routerLink]="['/login']" class="nav-item nav-link fw-bold">Logout</a>   
+              <a (click)="logout()" [routerLink]="['/login']" class="nav-item nav-link fw-bold">Logout</a>   
             </div>
           </div>
           </div>
