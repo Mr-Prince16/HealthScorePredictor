@@ -108,7 +108,7 @@
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
      <h3>You are Now Done.</h3>
-     <a [routerLink]="['/wellness-score']">Check How well you Did</a>
+     <a (click)="postData()" [routerLink]="['/wellness-score']">Check How well you Did</a>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>

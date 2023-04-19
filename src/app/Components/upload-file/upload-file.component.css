@@ -12,7 +12,9 @@ body {
 .column2{
   display: inline-flex;
 }
-
+[hidden]{
+  display: none !important;
+}
 .outer {
   height: 12vh;
   background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);

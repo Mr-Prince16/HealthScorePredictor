@@ -8,9 +8,11 @@ import { FileUploadService } from '../Services/file-upload.service';
   styleUrls: ['./upload-file.component.css'],
 })
 export class UploadFileComponent {
-  shortLink: string = ''; // Variable to store shortLink from api response
+  shortLink: boolean = false; // Variable to store shortLink from api response
   loading: boolean = false; // Flag variable
   file: File = null; // Variable to store file to Upload
+  id:any=localStorage.getItem('customerId');
+  wellnessScore:any;
 
   // Inject service
   constructor(private fileUploadService: FileUploadService) {}
@@ -21,17 +23,30 @@ export class UploadFileComponent {
   }
 
   // OnClick of button Upload
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('customerId');
+  }
   onUpload() {
     if (this.file) {
       this.loading = !this.loading;
       console.log(this.file);
-      this.fileUploadService.upload(this.file).subscribe((event: any) => {
+      console.log(this.id);
+      this.fileUploadService.upload(this.file,this.id).subscribe((event: any) => {
         if (typeof event === 'object') {
           // Short link via api response
-          this.shortLink = event.link;
-          this.loading = false; // Flag variable
+          // this.shortLink = event.link;
+          this.loading = false; 
+          // Flag variable
         }
+        console.log(event.wellnessScore);
+        this.shortLink = true;
+        this.wellnessScore=event.wellnessScore;
+        
       });
+      this.shortLink = false;
     }
   }
 }
+
+

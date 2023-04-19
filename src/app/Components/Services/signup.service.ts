@@ -9,6 +9,10 @@ export class SignupService {
    apiUrl!:any;
   constructor(private http: HttpClient) { }
   signUp(parameter:any):Observable<any>{
-    return this.http.post(this.apiUrl,parameter)
+    console.log('srinjoy')
+    // this.apiUrl="https://localhost:7206/api/Sign_up"
+    return this.http.post("https://localhost:7206/api/Sign_up",parameter)
+    
+    
   }
 }

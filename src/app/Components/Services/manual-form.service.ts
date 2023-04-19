@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ManualFormService {
-  ApiUrl = '';
+  ApiUrl = 'https://localhost:7206/api/Diagnoses/';
   constructor(private http:HttpClient) { }
   submitForm(parameter:any): Observable<any>{
   return this.http.post(this.ApiUrl,parameter);

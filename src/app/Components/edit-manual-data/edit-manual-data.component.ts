@@ -24,11 +24,6 @@ export class EditManualDataComponent {
     bmi: ['', Validators.required],
     esr: ['', Validators.required],
     pulse: ['', Validators.required],
-    diabetic: ['', Validators.required],
-    obes:['', Validators.required],
-    kidney:['', Validators.required],
-    anaemia:['', Validators.required],
-    cardiac:['' , Validators.required]
   });
   isLinear = false;
   stepperOrientation: Observable<StepperOrientation>;
