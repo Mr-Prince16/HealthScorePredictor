@@ -25,6 +25,6 @@ export class FileUploadService {
     // with formData as req
     // this.object.res=this.http.post(this.baseApiUrl, formData);
     // this.object.key=id;
-    return this.http.post("https://localhost:7206/api/UploadPDF/", formData) ;
+    return this.http.post(`https://localhost:7206/api/UploadPDF?a=${id}`, formData) ; 
   }
 }

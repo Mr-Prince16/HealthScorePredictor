@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  ApiUrl = 'https://localhost:7286/api/Customers/GetUserDetails/';
+  ApiUrl = 'https://localhost:7286/api/Customers/GetUserDetails';
   constructor(private http:HttpClient) { }
 
-  login(credential:any): Observable<any> {
+  login1(credential:any): Observable<any> {
     return this.http.post(this.ApiUrl,credential);
 }
 getToken(): string | null {

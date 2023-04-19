@@ -11,7 +11,7 @@ export class SignupService {
   signUp(parameter:any):Observable<any>{
     console.log('srinjoy')
     // this.apiUrl="https://localhost:7206/api/Sign_up"
-    return this.http.post("https://localhost:7206/api/Sign_up/",parameter)
+    return this.http.post("https://localhost:7206/api/Sign_up",parameter)
     
     
   }

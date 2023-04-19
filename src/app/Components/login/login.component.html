@@ -9,7 +9,7 @@
                 <div class="navbar-nav">
                     <a routerLink="['/landing']" class="nav-item nav-link fw-bold ">Home</a>
                     <a routerLink="['']" class="nav-item nav-link fw-bold ">Contact Us</a>
-                   
+
                 </div>
             </div>
         </div>
@@ -22,15 +22,15 @@
                         <h3 class="pt-3 font-weight-bold">Login</h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form [formGroup]="loginForm">
+                        <form [formGroup]="loginForm" >
                             <div class="form-group pt-3">
                                 <div class="input-field">
                                     <span class="fa fa-user p-2"></span>
-                                    <input type="text" formControlName="email" placeholder="Email">
+                                    <input type="text" formControlName="username" placeholder="Email">
                                 </div>
 
                             </div>
-                            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required' , 'email')"
+                            <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required' , 'email')"
                                 class="text-danger">*Email is required</small>
                             <div class="form-group pt-3">
                                 <div class="input-field">
@@ -44,8 +44,9 @@
                             <div class="form-inline fr mt-4">
                                 <a id="forget" class="font-weight-bold">Forget Password?</a>
                             </div>
-                            <button (click)="login()" [disabled]="!loginForm.valid" type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>
-                            <div class="text-center pt-4 text-muted" [routerLink]="">Don't have account? <a id="forget"
+                            <button (click)="login()" [disabled]="!loginForm.valid" type="submit" 
+                                class="btn btn-primary btn-block mt-4 w-100">Login</button>
+                            <div class="text-center pt-4 text-muted" >Don't have account? <a id="forget"
                                     [routerLink]="['/sign-up']">Sign Up</a></div>
                         </form>
                     </div>

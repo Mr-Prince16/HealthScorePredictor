@@ -50,12 +50,11 @@ of Simple CSS Waves-->
       <button (click)="onUpload()" class="btn btn-success">Upload</button>
     </div>
     <!-- Shareable short link of uoloaded file -->
-    <div class="container text-center jumbotron" *ngIf="shortLink">
-      <h2>Your Score is : </h2>
-      <h3></h3>
+    <div  class="container text-center jumbotron" >
+      <h2 *ngIf="shortLink" >Your Score is : {{wellnessScore}} out of 10 </h2>
     </div>
    <!--Flag variable is used here-->
-    <div class="container" *ngIf="loading">
+    <div class="container"*ngIf="loading">
       <h3>All The Best ...</h3>
     </div>
   </h1>
