@@ -136,3 +136,7 @@ p {
 
  
 }
+.wellness-link{
+  cursor: pointer;
+  text-decoration: underline;
+}

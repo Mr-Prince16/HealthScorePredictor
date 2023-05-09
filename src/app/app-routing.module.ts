@@ -10,17 +10,19 @@ import { UploadFileComponent } from './Components/upload-file/upload-file.compon
 import { EditManualDataComponent } from './Components/edit-manual-data/edit-manual-data.component';
 import { WellnessScoreComponent } from './Components/wellness-score/wellness-score.component';
 import { AuthGuard } from './Components/Guards/auth.guard';
+import { HealthDetailsComponent } from './Components/health-details/health-details.component';
 
 const routes: Routes = [
   {path: '' , component: LandingComponent,},
   {path:'login' , component:LoginComponent},
   {path:'sign-up',component:SignupComponent},
   {path: 'landing', component:LandingComponent, },
-  {path: 'upload-file', component:UploadFileComponent ,canActivate:[AuthGuard]},
+  {path: 'upload-file', component:UploadFileComponent },
   {path:'questions' , component:QuestionsComponent},
-  {path:'manual-data' , component:ManualDataComponent ,canActivate:[AuthGuard]},
-  {path: 'edit-manual-data' , component: EditManualDataComponent ,canActivate:[AuthGuard]},
-  {path: 'wellness-score' , component: WellnessScoreComponent ,canActivate:[AuthGuard]},
+  {path:'manual-data' , component:ManualDataComponent },
+  {path: 'edit-manual-data' , component: EditManualDataComponent },
+  {path: 'wellness-score' , component: WellnessScoreComponent},
+  {path: 'health-details' , component: HealthDetailsComponent},
   {path:'**', redirectTo:'landing'}
 ];
 
