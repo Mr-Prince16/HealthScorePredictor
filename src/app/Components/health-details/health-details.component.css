@@ -1,0 +1,56 @@
+/* body{
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    background-color: blue;
+}
+
+.mat-typography{
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+} */
+body{
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%) !important;
+    text-align: center;
+}
+
+table {
+    width: 80%;
+  
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 80%;
+  }
+
+
+  th{
+    text-align: center !important;
+    width: 15%;
+  }
+  td{
+    width: 5%;
+    text-align: center !important;
+  }
+  .even-row {
+    color: black;
+    background-color: rgb(253, 254, 255);
+  }
+
+  .odd-row {
+    color: #fff;
+    background-color: rgb(171, 170, 170);
+  }
+  .outside-Range{
+    background: linear-gradient(45deg, #fa9393, #f40404);
+  }
+  .within-Range{
+    background: linear-gradient(45deg, #8be156, #018337);
+  }
+  .mat-elevation-z8{
+    width: 80%;
+   position: relative;
+   left: 10%;
+  }
+  .jumbotron{
+    margin-top: 40px;
+    color: rgb(36, 233, 36);
+  }

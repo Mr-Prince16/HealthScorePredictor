@@ -52,6 +52,7 @@ of Simple CSS Waves-->
     <!-- Shareable short link of uoloaded file -->
     <div  class="container text-center jumbotron" >
       <h2 *ngIf="shortLink" >Your Score is : {{wellnessScore}} out of 10 </h2>
+       <h3 *ngIf="shortLink" class="wellness-link" routerLink="/health-details">See Detailed Report</h3>
     </div>
    <!--Flag variable is used here-->
     <div class="container"*ngIf="loading">

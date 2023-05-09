@@ -20,6 +20,10 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { EditManualDataComponent } from './Components/edit-manual-data/edit-manual-data.component';
 import { WellnessScoreComponent } from './Components/wellness-score/wellness-score.component';
+import { HealthDetailsComponent } from './Components/health-details/health-details.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +35,7 @@ import { WellnessScoreComponent } from './Components/wellness-score/wellness-sco
     ManualDataComponent,
     EditManualDataComponent,
     WellnessScoreComponent,
+    HealthDetailsComponent,
     
   ],
   imports: [
@@ -43,7 +48,10 @@ import { WellnessScoreComponent } from './Components/wellness-score/wellness-sco
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [HttpClient, {
     provide: HTTP_INTERCEPTORS,
